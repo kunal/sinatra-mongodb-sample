@@ -10,11 +10,15 @@ class Dictionaree < Sinatra::Base
   end
 
   get '/' do
+#    d = DictionaryModel.new(:word => "dhaval")
+#    d.meaning = "jain"
+#    d.save
     erb :home
   end
 
   post '/' do
-    #    "Hello #{params[:word]}"
+    @meaning = DictionaryModel.find_by_word(params[:word])
+
     erb :home
   end
   
