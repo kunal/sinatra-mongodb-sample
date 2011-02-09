@@ -1,0 +1,5 @@
+mongo_mapper
+bson_ext
+i18n
+sinatra
+log_buddy
