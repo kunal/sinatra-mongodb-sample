@@ -12,6 +12,11 @@ class Dictionaree < Sinatra::Base
   get '/' do
     erb :home
   end
+
+  post '/' do
+    #    "Hello #{params[:word]}"
+    erb :home
+  end
   
   get '/hit' do
     "hmm"
