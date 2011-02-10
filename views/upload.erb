@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+
+<head>
+<title>Home</title>
+</head>
+<body>
+<h1>Sinatra Sample App</h1>
+<br>
+
+<% if @message %>
+<%= @message %>
+<% end %>
+<br>
+
+<form action="/upload" method="post" enctype="multipart/form-data">
+Upload the YAML dictionary file:
+<input type="file" name="uploadfile" />
+<br>
+<input type="submit" value="Upload" />
+</form>
