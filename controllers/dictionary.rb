@@ -28,8 +28,8 @@ class Dictionaree < Sinatra::Base
   post '/upload' do
     tempfile = params[:uploadfile][:tempfile]
 
-    FileUtils.mkdir_p("uploads/")
-    uploadPath = 'uploads/' + Time.new.strftime("%H_%M_%S__%d_%m_%Y") + ".yaml"
+    FileUtils.mkdir_p("tmp/")
+    uploadPath = 'tmp/' + Time.new.strftime("%H_%M_%S__%d_%m_%Y") + ".yaml"
 
     if FileUtils.copy_file(tempfile.path, uploadPath)
       @message = "File upload failed"
