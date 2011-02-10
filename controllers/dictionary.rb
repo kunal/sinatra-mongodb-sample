@@ -44,6 +44,8 @@ class Dictionaree < Sinatra::Base
     end
 
     @words.each do |word, meaning|
+      DictionaryModel.delete(DictionaryModel.all(:word =: word.to_s))
+
       d = DictionaryModel.new(:word => word.to_s)
       d.meaning = meaning.to_s
       
