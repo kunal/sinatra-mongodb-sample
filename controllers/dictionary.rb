@@ -44,7 +44,14 @@ class Dictionaree < Sinatra::Base
     end
 
     @words.each do |word, meaning|
-      DictionaryModel.delete(DictionaryModel.all(:word =: word.to_s))
+      existing = DictionaryModel.where(:word => word.to_s).all
+
+      existingCounter = 0
+
+      existing.each do 
+        existing[existingCounter].delete
+        existingCounter = existingCounter + 1
+      end
 
       d = DictionaryModel.new(:word => word.to_s)
       d.meaning = meaning.to_s
