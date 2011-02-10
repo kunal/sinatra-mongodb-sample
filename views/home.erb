@@ -9,8 +9,10 @@
 <h1>Sinatra Sample App</h1>
 <br>
 
-<% if params[:word] %>
-Meaning of <b><%= params[:word] %></b> is <b><%= @meaning.meaning %></b>
+<% if not @match.nil?  %>
+Meaning of <b><%= params[:word] %></b> is <b><%= @match.meaning %></b>
+<% elsif defined? @match and @match.nil?  %>
+Word <b><%= params[:word] %></b> not found in the dictionary
 <br>
 <% end %>
 
