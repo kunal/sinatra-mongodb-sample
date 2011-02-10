@@ -16,7 +16,7 @@ class Dictionaree < Sinatra::Base
   end
 
   post '/' do
-    @meaning = DictionaryModel.find_by_word(params[:word])
+    @match = DictionaryModel.find_by_word(params[:word])
 
     erb :home
   end
