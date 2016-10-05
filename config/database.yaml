@@ -3,11 +3,11 @@ development:
   port: 27017
   database: dict_dev
   logfile: development.log
-    
+
 production:
   host: localhost
   port: 27017
   database: dict_prod
   logfile: production.log
-    
+
 environment: development
